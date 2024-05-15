@@ -1,9 +1,11 @@
 import React from "react";
+import "./index.css";
+import formAttr from "./Data";
 
-function Form({ label, options, placeholder }) {
+function Form({ label, options, icon, placeholder }) {
   return (
-    <div>
-      <div className="input-group mb-3">
+    <div className="form-container">
+      <div className="input-group gap-2 col-6 mx-auto mb-3">
         <button
           className="btn btn-outline-secondary dropdown-toggle"
           type="button"
@@ -11,14 +13,15 @@ function Form({ label, options, placeholder }) {
           aria-expanded="false"
         >
           {label}
+          <img
+            src="/icons8-location-16.png"
+            alt="icon"
+            style={{ marginRight: "5px" }}
+          />
         </button>
         <ul className="dropdown-menu">
           {options.map((option, index) => (
-            <li key={index}>
-              <a className="dropdown-item" href="#">
-                {option}
-              </a>
-            </li>
+            <li key={index}>{option}</li>
           ))}
         </ul>
         <input
