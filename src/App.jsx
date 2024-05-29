@@ -1,9 +1,8 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./components/Form";
 import formAttr from "./Data";
-import SubmitButton from "./Button";
+import SubmitButton from "./components/Button";
 import IconsDisplay from "./DisplayIcons";
-import ImagesDis from "./Image";
 
 function forms(form, index) {
   return <Form key={index} label={form.label} options={form.options} />;
@@ -15,7 +14,6 @@ function App() {
       {formAttr.map(forms)}
       <SubmitButton />
       <IconsDisplay />
-      <ImagesDis />
     </div>
   );
 }

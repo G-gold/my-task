@@ -1,7 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function IconsDisplay() {
   return (
     <div>
-      <img src="https://ui-avatars.com/api/?name=John+Doe" alt="Icon" />
+      <FontAwesomeIcon icon="fa-solid fa-map-location-dot" />
     </div>
   );
 }

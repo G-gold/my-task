@@ -1,47 +1,63 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
+:root {
+  --primary-color: #ecf0f3;
+  --secondary-color: #1a9ec9;
+  --accent-color: #29b9e4;
+  --text-color: #333;
+  --placeholder-color: #aaa;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(255, 255, 255, 0.5);
+  --focus-shadow-color: rgba(
+    255,
+    102,
+    102,
+    0.7
+  ); /* Updated color for focus shadow */
+}
+
+/* Global Styles */
 body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background: #ecf0f3;
+  background-image: url("https://img.freepik.com/free-vector/abstract-pixel-rain-background_23-2148380472.jpg?size=626&ext=jpg&ga=GA1.2.286522076.1715163497&semt=ais_user_b");
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 input {
   caret-color: red;
 }
 
-.input-group {
-  width: 350px;
-}
-
+/* Container Styles */
 .app-container {
   position: relative;
   width: 400px;
-  height: 600px;
+  height: 680px;
   border-radius: 20px;
   padding: 20px;
   box-sizing: border-box;
-  background-image: url("https://img.freepik.com/free-vector/realistic-abstract-technology-particle-background_23-2148431263.jpg?t=st=1715171256~exp=1715174856~hmac=fdae272dca716692634ae402c900c8ff68e4a08957ef481a136ed616c1e6ec0a&w=826");
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.7
-  ); /* Semi-transparent white background */
-  box-shadow: 4px 4px 10px #cbced1, -1px -1px 10px #b2b2db;
+  background-color: var(--primary-color);
+  box-shadow: 4px 4px 15px var(--shadow-color),
+    -1px -1px 10px var(--highlight-color);
 }
 
+/* Title Styles */
 .app-title {
   text-align: left;
   margin-top: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+/* Input Group Styles */
+.input-group {
+  width: 100%;
+  margin-top: 10px;
 }
 
 label,
@@ -53,77 +69,96 @@ input {
   box-sizing: border-box;
 }
 
+label {
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: var(--placeholder-color);
+}
+
+input {
+  background: var(--secondary-color);
+  padding-left: 15px;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: inset 2px 2px 5px var(--shadow-color),
+    inset -1px -1px 5px var(--highlight-color);
+  transition: box-shadow 0.3s ease;
+  color: white;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Dropdown Menu Styles */
 .dropdown-menu {
   padding: 15px;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  background: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  /* box-shadow: 14px 14px 20px #cbced1, -1px -1px 20px white; */
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px var(--shadow-color),
+    -1px -1px 5px var(--highlight-color);
 }
 
 .dropdown-menu li:hover {
   padding: 5px 10px;
-  background-color: #cbced1;
+  background-color: var(--secondary-color);
   border-radius: 5px;
-}
-
-label {
-  margin-bottom: 4px;
-}
-
-label:nth-of-type(2) {
-  margin-top: 12px;
-}
-
-input::placeholder {
   color: white;
 }
 
-input {
-  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
-  padding-left: 10px;
-  height: 45px;
-  font-size: 14px;
-  border-radius: 50px;
-  box-shadow: 3px 3px 3px #6667ab, inset -1px -1px 1px white;
-}
-
-.form-control {
-  background-color: #e3e5e8;
-  height: 35px;
-}
-
+/* Button Styles */
 .btn {
+  display: inline-block;
   color: white;
   border: none;
   height: 35px;
-  background-color: rgba(
-    204,
-    41,
-    54,
-    0.7
-  ); /* Semi-transparent red background */
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 2px 2px 5px var(--shadow-color);
 }
 
 button {
   color: white;
-  margin-top: 5px;
-  background: rgba(204, 41, 54, 0.7); /* Semi-transparent red background */
-  height: 40px;
-  border-radius: 20px;
+  margin-top: 10px;
+  background: var(--accent-color);
+  height: 45px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-weight: 900;
-  box-shadow: 3px 3px 1px #6667ab, -1px -1px 1px gray;
-  transition: 0.5s;
+  font-weight: 700;
+  box-shadow: 3px 3px 5px var(--shadow-color),
+    -1px -1px 5px var(--highlight-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-  box-shadow: none;
+  background-color: var(--secondary-color);
+  box-shadow: 3px 3px 10px var(--shadow-color);
 }
 
 .submit-button {
   padding: 10px 40px;
-  height: 45px;
+  height: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  background: var(--accent-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 3px 3px 5px var(--shadow-color),
+    -1px -1px 5px var(--highlight-color);
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
 }
